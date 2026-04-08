@@ -48,7 +48,7 @@ public sealed class SemanticKernelProvider
                     azureAIOptions.Deployment,
                     azureAIOptions.Endpoint,
                     azureAIOptions.APIKey,
-                    httpClient: httpClientFactory.CreateClient());
+                    httpClient: new HttpClient(new MaxTokensPatchHandler(new HttpClientHandler())));
                 break;
 
             case string x when x.Equals("OpenAI", StringComparison.OrdinalIgnoreCase):
