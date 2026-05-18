@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <UserSecretsId>5ee045b0-aea3-4f08-8d31-32d1a6f8fed0</UserSecretsId>
-    <NoWarn>SKEXP0003,SKEXP0011,SKEXP0021,SKEXP0026,SKEXP0042,SKEXP0050,SKEXP0052,SKEXP0053,SKEXP0060</NoWarn>
+    <NoWarn>SKEXP0003,SKEXP0011,SKEXP0021,SKEXP0026,SKEXP0042,SKEXP0050,SKEXP0052,SKEXP0053,SKEXP0060,CA1515</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup>

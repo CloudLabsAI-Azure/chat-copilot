@@ -37,7 +37,7 @@ internal static class SemanticChatMemoryExtractor
         ILogger logger,
         CancellationToken cancellationToken)
     {
-        foreach (string memoryType in Enum.GetNames(typeof(SemanticMemoryType)))
+        foreach (string memoryType in Enum.GetNames<SemanticMemoryType>())
         {
             try
             {

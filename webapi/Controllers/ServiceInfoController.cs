@@ -63,7 +63,7 @@ public class ServiceInfoController : ControllerBase
         {
             MemoryStore = new MemoryStoreInfoResponse()
             {
-                Types = Enum.GetNames(typeof(MemoryStoreType)),
+                Types = Enum.GetNames<MemoryStoreType>(),
                 SelectedType = this.memoryOptions.GetMemoryStoreType(this.Configuration).ToString(),
             },
             AvailablePlugins = this.availablePlugins,
