@@ -8,7 +8,6 @@ module.exports = {
     },
     extends: [
         'react-app/jest',
-        'plugin:react/recommended',
         'plugin:react-hooks/recommended',
         'plugin:@typescript-eslint/strict-type-checked',
         'plugin:@typescript-eslint/stylistic-type-checked',

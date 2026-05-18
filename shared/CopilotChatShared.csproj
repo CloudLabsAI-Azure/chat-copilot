@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>CopilotChat.Shared</RootNamespace>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <RollForward>LatestMajor</RollForward>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
