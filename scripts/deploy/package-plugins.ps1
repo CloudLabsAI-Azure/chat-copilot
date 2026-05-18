@@ -10,7 +10,7 @@ param(
     
     [string]
     # .NET framework to publish.
-    $DotNetFramework = "net6.0",
+    $DotNetFramework = "net9.0",
     
     [string]
     # Output directory for published assets.

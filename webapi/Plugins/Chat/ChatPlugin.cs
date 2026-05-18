@@ -472,7 +472,7 @@ public class ChatPlugin
             null,
             CopilotChatMessage.AuthorRoles.User,
             // Default to a standard message if the `type` is not recognized
-            Enum.TryParse(type, out CopilotChatMessage.ChatMessageType typeAsEnum) && Enum.IsDefined(typeof(CopilotChatMessage.ChatMessageType), typeAsEnum)
+            Enum.TryParse(type, out CopilotChatMessage.ChatMessageType typeAsEnum) && Enum.IsDefined<CopilotChatMessage.ChatMessageType>(typeAsEnum)
                 ? typeAsEnum
                 : CopilotChatMessage.ChatMessageType.Message);
 

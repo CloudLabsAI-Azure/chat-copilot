@@ -3,8 +3,7 @@
 Installs the requirements for running Chat Copilot.
 #>
 
-if ($IsLinux) 
-{
+if ($IsLinux) {
     Write-Host "ERROR: This script is not supported for your operating system."
     exit 1;
 }
@@ -17,8 +16,7 @@ $ChocoInstalled = $false
 if (Get-Command choco.exe -ErrorAction SilentlyContinue) {
     $ChocoInstalled = $true
 }
-if (!$ChocoInstalled)
-{
+if (!$ChocoInstalled) {
     Write-Host "Installing Chocolatey..."
     Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')
     $env:PATH += ";%ALLUSERSPROFILE%\chocolatey\bin"
@@ -26,8 +24,7 @@ if (!$ChocoInstalled)
 }
 
 # Ensure required packages are installed
-$Packages = 'dotnet-8.0-sdk', 'nodejs', 'yarn'
-foreach ($PackageName in $Packages)
-{
+$Packages = 'dotnet-9.0-sdk', 'nodejs', 'yarn'
+foreach ($PackageName in $Packages) {
     choco install $PackageName -y
 }
