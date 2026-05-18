@@ -178,7 +178,7 @@ resource appServiceWebConfig 'Microsoft.Web/sites/config@2022-09-01' = {
     }
     detailedErrorLoggingEnabled: true
     minTlsVersion: '1.2'
-    netFrameworkVersion: 'v6.0'
+    netFrameworkVersion: 'v9.0'
     use32BitWorkerProcess: false
     vnetRouteAllEnabled: true
     webSocketsEnabled: true
@@ -460,7 +460,7 @@ resource appServiceMemoryPipelineConfig 'Microsoft.Web/sites/config@2022-09-01' 
     alwaysOn: true
     detailedErrorLoggingEnabled: true
     minTlsVersion: '1.2'
-    netFrameworkVersion: 'v6.0'
+    netFrameworkVersion: 'v9.0'
     use32BitWorkerProcess: false
     vnetRouteAllEnabled: true
     appSettings: [
