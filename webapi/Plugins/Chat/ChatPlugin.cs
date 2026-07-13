@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft. All rights reserved.
+// Copyright (c) Microsoft. All rights reserved.
 
 using System;
 using System.Collections.Generic;
@@ -548,11 +548,10 @@ public class ChatPlugin
     {
         return new OpenAIPromptExecutionSettings
         {
-            MaxTokens = this._promptOptions.ResponseTokenLimit,
-            Temperature = this._promptOptions.ResponseTemperature,
-            TopP = this._promptOptions.ResponseTopP,
-            FrequencyPenalty = this._promptOptions.ResponseFrequencyPenalty,
-            PresencePenalty = this._promptOptions.ResponsePresencePenalty,
+            // Sampling parameters (MaxTokens, Temperature, TopP, FrequencyPenalty, PresencePenalty)
+            // are omitted: reasoning-tier models (e.g. gpt-5.x) reject all of them as
+            // unsupported_parameter. Response-token budget is already reserved independently
+            // when building the prompt (see ResponseTokenLimit usage above).
             ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
         };
     }
@@ -564,12 +563,8 @@ public class ChatPlugin
     {
         return new OpenAIPromptExecutionSettings
         {
-            MaxTokens = this._promptOptions.ResponseTokenLimit,
-            Temperature = this._promptOptions.IntentTemperature,
-            TopP = this._promptOptions.IntentTopP,
-            FrequencyPenalty = this._promptOptions.IntentFrequencyPenalty,
-            PresencePenalty = this._promptOptions.IntentPresencePenalty,
-            StopSequences = new string[] { "] bot:" }
+            // Sampling parameters and StopSequences omitted — see comment in
+            // CreateChatRequestSettings() above; 'stop' is rejected the same way.
         };
     }
 
